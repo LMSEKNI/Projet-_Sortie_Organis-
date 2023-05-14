@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Projet.Data;
+using Projet.Models;
 
 namespace ProjetSortieOrganise.Controllers;
 
@@ -44,6 +45,22 @@ public class EvenementController : ControllerBase
         }
 
         return evenement;
+    }
+    
+    
+    [HttpGet("{id}/Activities")]
+    public async Task<ActionResult<IEnumerable<Activite>>> GetEventActivities(int id)
+    {
+        var @event = await _context.Evenements.FindAsync(id);
+
+        if (@event == null)
+        {
+            return NotFound();
+        }
+
+        var activities = @event.Activities;
+
+        return activities.ToList();
     }
 
    
