@@ -1,34 +1,36 @@
-
+namespace Projet__Sortie_Organisé.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-public class Activite {
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
-    public Activite(int idActivite, TimeOnly heureDebut, TimeOnly heureFin, DateOnly date, string descriptionAct, string nomActivite)
-    {
-        this.idActivite = idActivite;
-        this.heureDebut = heureDebut;
-        this.heureFin = heureFin;
-        this.date = date;
-        this.descriptionAct = descriptionAct;
-        this.nomActivite = nomActivite;
-    }
+public class Activite
+{
 
-    private int idActivite { get; set; }
 
-    private TimeOnly heureDebut { get; set; }
+    [Key]
+    public int idActivite { get; set; }
 
-    private TimeOnly heureFin { get; set; }
+    [NotMapped]
+    public TimeOnly heureDebut { get; set; }
 
-    private DateOnly date { get; set; }
+    [NotMapped]
+    public TimeOnly heureFin { get; set; }
 
-    private String descriptionAct { get; set; }
+    [NotMapped]
+    public DateOnly date { get; set; }
 
-    private String nomActivite { get; set; }
+    public String descriptionAct { get; set; }
+
+    public String nomActivite { get; set; }
+
+    public int idEvent;
+    public int idVille;
+
+    public virtual Evenement Event { get; set; }
+    public virtual Ville Ville { get; set; }
 
     
-    
+
 }

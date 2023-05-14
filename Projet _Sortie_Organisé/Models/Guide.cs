@@ -6,7 +6,7 @@ using System.Text;
 
 public class Guide : Personne {
 
-    public Guide() {
-    }
-
+    public Guide() : base("", "", "", "", "", "") { }
+    
+    public  List<Evenement> evenements;
 }
