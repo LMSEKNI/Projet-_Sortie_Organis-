@@ -1,3 +1,8 @@
+namespace Projet__Sortie_Organisé.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 using System;
 using System.Collections.Generic;
@@ -6,6 +11,28 @@ using System.Text;
 
 public class Activite {
 
+
+    [Key]
+    public int idActivite { get; set; }
+
+    [NotMapped]
+    public TimeOnly heureDebut { get; set; }
+
+    [NotMapped]
+    public TimeOnly heureFin { get; set; }
+
+    [NotMapped]
+    public DateOnly date { get; set; }
+
+    public String descriptionAct { get; set; }
+
+    public String nomActivite { get; set; }
+
+    public int idEvent;
+    public int idVille;
+
+    public virtual Evenement Event { get; set; }
+    public virtual Ville Ville { get; set; }
 
     public Activite(int idActivite, TimeOnly heureDebut, TimeOnly heureFin, DateOnly date, string descriptionAct, string nomActivite)
     {
@@ -16,19 +43,5 @@ public class Activite {
         this.descriptionAct = descriptionAct;
         this.nomActivite = nomActivite;
     }
-
-    private int idActivite { get; set; }
-
-    private TimeOnly heureDebut { get; set; }
-
-    private TimeOnly heureFin { get; set; }
-
-    private DateOnly date { get; set; }
-
-    private String descriptionAct { get; set; }
-
-    private String nomActivite { get; set; }
-
-    
     
 }

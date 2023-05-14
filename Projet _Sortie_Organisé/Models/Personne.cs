@@ -1,24 +1,34 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
 public abstract class Personne {
 
-    public Personne() {
+    public Personne(string cin, string nom, string prenom, string email, string mdp, string numTel)
+    {
+        this.cin = cin;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.mdp = mdp;
+        this.numTel = numTel;
+
     }
 
-    protected void nom;
+    [Key]
+    protected string cin { get; set; }
 
-    protected void prenom;
+    protected string nom { get; set; }
 
-    protected void cin;
+    protected string prenom { get; set; }
 
-    protected void email;
+    protected string email { get; set; }
 
-    protected void mdp;
+    protected string mdp { get; set; }
 
-    protected void numTel;
+    protected string numTel { get; set; }
 
 }

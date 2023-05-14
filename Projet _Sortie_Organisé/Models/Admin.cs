@@ -6,7 +6,6 @@ using System.Text;
 
 public class Admin : Personne {
 
-    public Admin() {
-    }
+    public Admin(string cin, string nom, string prenom, string email, string mdp, string numTel) : base(cin, nom, prenom, email, mdp, numTel) { }
 
 }
