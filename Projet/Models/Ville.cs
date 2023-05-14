@@ -1,4 +1,6 @@
-namespace Projet__Sortie_Organisé.Models;
+using Projet.Models;
+
+namespace Projet.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -30,10 +32,6 @@ public class Ville {
         this.codePostal = codePostal;
     }
 
-    private int idVille { get; set; }
 
-    private String nomVille { get; set; }
-
-    private String codePostal { get; set; }
 
 }

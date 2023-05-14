@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Projet__Sortie_Organisé.Data;
+using Projet.Data;
 
 #nullable disable
 
-namespace Projet__Sortie_Organisé.Migrations
+namespace Projet.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20230514123208_InitialCreate")]
@@ -68,7 +68,7 @@ namespace Projet__Sortie_Organisé.Migrations
                     b.ToTable("Evenements");
                 });
 
-            modelBuilder.Entity("Projet__Sortie_Organisé.Models.Activite", b =>
+            modelBuilder.Entity("Projet.Models.Activite", b =>
                 {
                     b.Property<int>("idActivite")
                         .ValueGeneratedOnAdd()
@@ -99,7 +99,7 @@ namespace Projet__Sortie_Organisé.Migrations
                     b.ToTable("Activites");
                 });
 
-            modelBuilder.Entity("Projet__Sortie_Organisé.Models.Ville", b =>
+            modelBuilder.Entity("Projet.Models.Ville", b =>
                 {
                     b.Property<int>("idVille")
                         .ValueGeneratedOnAdd()
@@ -120,7 +120,7 @@ namespace Projet__Sortie_Organisé.Migrations
                     b.ToTable("Villes");
                 });
 
-            modelBuilder.Entity("Projet__Sortie_Organisé.Models.Activite", b =>
+            modelBuilder.Entity("Projet.Models.Activite", b =>
                 {
                     b.HasOne("Evenement", "Event")
                         .WithMany("Activities")
@@ -128,7 +128,7 @@ namespace Projet__Sortie_Organisé.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Projet__Sortie_Organisé.Models.Ville", "Ville")
+                    b.HasOne("Projet.Models.Ville", "Ville")
                         .WithMany("Activites")
                         .HasForeignKey("idVille")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -144,7 +144,7 @@ namespace Projet__Sortie_Organisé.Migrations
                     b.Navigation("Activities");
                 });
 
-            modelBuilder.Entity("Projet__Sortie_Organisé.Models.Ville", b =>
+            modelBuilder.Entity("Projet.Models.Ville", b =>
                 {
                     b.Navigation("Activites");
                 });

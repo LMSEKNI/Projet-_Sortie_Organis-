@@ -1,5 +1,6 @@
-using Projet__Sortie_Organisé.Models;
+using Projet.Models;
 using System.ComponentModel.DataAnnotations;
+using Projet.Models;
 
 public class Evenement
 {

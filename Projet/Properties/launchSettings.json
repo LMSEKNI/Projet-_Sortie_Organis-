@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "Projet__Sortie_Organisé": {
+    "Projet": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
