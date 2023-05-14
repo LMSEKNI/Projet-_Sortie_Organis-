@@ -44,6 +44,21 @@ public class PersonneController : ControllerBase
 
         return personne;
     }
+    
+    [HttpGet("{id}/Evenements")]
+    public async Task<ActionResult<IEnumerable<Evenement>>> GetPersonneEvenements(string id)
+    {
+        var personne = await _context.Personnes.FindAsync(id);
+
+        if (personne == null)
+        {
+            return NotFound();
+        }
+
+        var evenements = personne.;///mochkla bassita
+
+        return evenements.ToList();
+    }
 
    
     [HttpPut("{Cin}")]
