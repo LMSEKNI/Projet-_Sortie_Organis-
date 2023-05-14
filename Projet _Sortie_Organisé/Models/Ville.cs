@@ -9,10 +9,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Ville {
+public class Ville
+{
 
-    
- 
+
+
 
     [Key]
     public int idVille { get; set; }
@@ -29,11 +30,5 @@ public class Ville {
         this.nomVille = nomVille;
         this.codePostal = codePostal;
     }
-
-    private int idVille { get; set; }
-
-    private String nomVille { get; set; }
-
-    private String codePostal { get; set; }
 
 }

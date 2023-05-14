@@ -1,3 +1,4 @@
+
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Projet__Sortie_Organisé.Models;
@@ -31,3 +32,4 @@ namespace Projet__Sortie_Organisé.Controllers
         }
     }
 }
+    

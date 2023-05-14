@@ -1,19 +1,18 @@
-<<<<<<< HEAD
+
 using Microsoft.EntityFrameworkCore;
 using Projet__Sortie_Organisé.Data;
 
-=======
->>>>>>> 0834d53b69c9ebe5455e194da6a68b8557666add
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-<<<<<<< HEAD
+
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
    builder.Configuration.GetConnectionString("DefaultConnection")));
-=======
 
->>>>>>> 0834d53b69c9ebe5455e194da6a68b8557666add
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
